@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .on("mouseleave", function() {
           tooltip.style("opacity", 0);
         });
-      const mycities = svg
+      const sizeOfVotes = svg
         .selectAll("circle")
         .data(metaData)
         .enter()
@@ -105,9 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("stroke", "rgba(12,61,245,1)")
         .attr("stroke-width", 1)
         .style("pointer-events", "none")
-        .on("click", d => {
-          console.log("Data: ", d);
-        });
     });
   });
 });
