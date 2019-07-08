@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Abstimmungskarte</title>
-</head>
-<body>
-  <h1>Bundesgesetz über Radio und Fernsehen</h1>
-  <div id="viz"></div>
-  <script src="https://unpkg.com/d3@5.9.7/dist/d3.min.js"></script>
-  <script src="https://unpkg.com/d3-geo@1.11.6/dist/d3-geo.min.js"></script>
-  <script src="./visualization.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Abstimmungskarte</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #root {
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+      }
+      header {
+        padding: 20px;
+        margin-top: 60px;
+        background-color: gray;
+      }
+      footer {
+        padding: 20px;
+        margin-top: -4px;
+        background-color: gray;
+      }
+      h1 {
+        color: purple;
+      }
+      .tooltip h1 {
+        color: red;
+      }
+      .tooltip h2 {
+        color: blue;
+      }
+      .tooltip p {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <h1>
+          Bundesgesetz über die Reform der Altersvorsorge 2020, Abstimmung vom
+          24.09.2017
+        </h1>
+      </header>
+      <div id="viz"></div>
+      <footer>
+        <h4>Anzahl gültige Stimmen</h4>
+        <h5>Total: 2 507 155</h5>
+        <h6>
+          Symbole mit einem Wert unter ±5 000 wurden zur besseren Lesbarkeit
+          visuell vergrössert dargestellt. Die Vorlage wurde verworfen. Kantone:
+          8 Ja, 18 Nein.
+        </h6>
+      </footer>
+      <script src="https://unpkg.com/d3@5.9.7/dist/d3.min.js"></script>
+      <script src="https://unpkg.com/d3-geo@1.11.6/dist/d3-geo.min.js"></script>
+      <script src="./visualization.js"></script>
+    </div>
+  </body>
 </html>
