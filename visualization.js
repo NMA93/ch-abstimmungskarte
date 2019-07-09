@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .on("mouseleave", function() {
           tooltip.style("opacity", 0);
         });
+      // add bubbles with relative size
       const sizeOfVotes = svg
         .selectAll("circle")
         .data(metaData)
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("fill", "rgba(12,61,245,0.65)")
         .attr("stroke", "rgba(12,61,245,1)")
         .attr("stroke-width", 1)
-        .style("pointer-events", "none")
+        .style("pointer-events", "none");
     });
   });
 });
