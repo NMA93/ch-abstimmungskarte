@@ -43,8 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .append("div")
         .style("opacity", 0)
         .style("position", "fixed")
-        .style("background", "rgba(255, 255, 255, 0.8)")
-        .style("padding", "3rem")
+        .style("background", "rgba(255, 255, 255, 0.85)")
+        .style("padding", "15px")
+        .style("border", "0.6px solid rgba(255,255,255,1)")
+        .style("border-radius", "4px")
         .style("pointer-events", "none");
       // define Cantons
       const swissCantons = svg
@@ -72,15 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
             .classed("tooltip", true)
             .style("opacity", 1)
             .html(
-              "<h1>" +
+              "<h2>" +
                 d.properties.name +
-                "</h1>" +
-                "<h2>" +
-                "Ja-Stimmenanteil, in %: " +
-                cantonYesVotes.ja_anteil +
                 "</h2>" +
                 "<p>" +
+                "Ja-Stimmenanteil, in %: " +
+                "<br>" +
+                cantonYesVotes.ja_anteil +
+                "</p>" +
+                "<p>" +
                 "Anzahl gültige Stimmen: " +
+                "<br>" +
                 cantonTotalVotes.total +
                 "</p>"
             );
