@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .append("svg")
         .attr("width", width)
         .attr("height", height)
-        .style("background-color", "#313131");
+        .style("background-color", "#white");
       // define map projection
       const swissMapProjection = d3
         .geoAlbers()
@@ -27,16 +27,16 @@ document.addEventListener("DOMContentLoaded", () => {
         .scaleThreshold()
         .domain([30, 35, 40, 45, 50, 55, 60, 65, 70, 100])
         .range([
-          "#d0001b",
-          "#e0513c",
-          "#ee7e5f",
-          "#f7a684",
-          "#fdceaa",
-          "#d0e0af",
-          "#a6c185",
-          "#7da35b",
-          "#538633",
-          "#256900"
+          "#3f007d",
+          "#54278f",
+          "#6a51a3",
+          "#807dba",
+          "#9e9ac8",
+          "#74c476",
+          "#41ab5d",
+          "#238b45",
+          "#006d2c",
+          "#00441b"
         ]);
       // define Tooltip
       const tooltip = container
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .enter()
         .append("path")
         .attr("d", d => pathGenerator(d))
-        .attr("stroke", "#FFFFFF")
-        .attr("stroke-width", 0.5)
+        .attr("stroke", "rgba(255,255,255,1)")
+        .attr("stroke-width", 0.6)
         .attr("fill", function(d) {
           const cantonMetaData = metaData.find(
             ja_anteil => ja_anteil.id == d.properties.id
@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .attr("cx", d => swissMapProjection([d.lon, d.lat])[0])
         .attr("cy", d => swissMapProjection([d.lon, d.lat])[1])
         .attr("r", d => d.size)
-        .attr("fill", "rgba(12,61,245,0.65)")
-        .attr("stroke", "rgba(12,61,245,1)")
+        .attr("fill", "rgba(255,255,255,0.65)")
+        .attr("stroke", "rgba(255,255,255,1)")
         .attr("stroke-width", 1)
         .style("pointer-events", "none");
     });
